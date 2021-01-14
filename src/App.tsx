@@ -1,15 +1,36 @@
 import React  from 'react';
 import { Divider } from 'antd';
+import axios from "axios";  // 설치 후 import
+
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
 
 const App: React.FC = () => {
+  axios.get("http://finance.naver.com/item/item_right_ajax.nhn?type=recent&code=005930&page=1")
+  .then(response => {      // .then : 응답(상태코드200~300미만)성공시
+     console.log(response);
+  })
+  .catch(error => {
+     console.log(error);
+  });
+  // const invocation = new XMLHttpRequest();
+  // const url = 'http://bar.other/resources/credentialed-content/';
+  // invocation.open('GET', url, true);
+  // invocation.withCredentials = true;
+  // // invocation.onreadystatechange = handler;
+  // invocation.send();
+
+  // const URL = 'https://snowdeer.com/menu/getMenuList.do?type=2'
+
+
+
+
   return (
     <div className="App">
-      <Divider>😂😈😀😎</Divider>
+      <Divider>🔧쿵⛏️쾅🔨쿵⛏️쾅🔧</Divider>
       <p>
-        리액트&& 타입스크립트 프로젝트 
+        열심히 개발중입니다!
       </p>
       <Divider orientation="left">Left Text</Divider>
       <p>
@@ -28,6 +49,9 @@ const App: React.FC = () => {
         
         }}
       />
+      {
+        
+      }
     </div>
   );
 }
